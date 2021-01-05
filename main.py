@@ -37,7 +37,7 @@ while 1:
         page = pdfobj.getPage(i)
         writePdf = PyPDF2.PdfFileWriter()
         writePdf.addPage(page)
-        writeFile = open(f"/mnt/c/projects/{nameofPdf}_{i+1}.pdf", "wb+")
+        writeFile = open(f"{nameofPdf}_{i+1}.pdf", "wb+")
         writePdf.write(writeFile)
         writeFile.close()
     break
