@@ -9,13 +9,13 @@ while 1:
         file = os.path.abspath(sys.argv[1])
     except IndexError:
         print("No file arguement given")
-        continue
+        exit()
 
 
     #check if file exists
     if(not os.path.exists(file)):
         print("file doesnt exists!")
-        continue
+        exit()
     pdf = open(file, "rb")
 
     #check if you can open file
@@ -23,7 +23,7 @@ while 1:
         pdfobj = PyPDF2.PdfFileReader(pdf)
     except:
         print("Error opening file. (Is the file a PDF?)")
-        continue
+        exit()
     #validate if name can be a valid filename
     try:
         nameofPdf = input("What would you like to name your file?\n")
